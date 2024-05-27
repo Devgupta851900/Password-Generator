@@ -1,0 +1,273 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "League Spartan", "sans-serif";
+}
+
+:root {
+	--dkViolet: hsl(268, 75%, 9%);
+	--ltViolet: hsl(268, 47%, 21%);
+	--ltViolet2: hsl(281, 89%, 26%);
+	--vbViolet: hsl(285, 91%, 52%);
+	--vbViolet2: hsl(290, 70%, 36%);
+
+	--vbYellow: hsl(52, 100%, 62%);
+
+	--plWhite: hsl(0, 0%, 100%);
+
+	--vbCyan: hsl(176, 100%, 44%);
+	--vbCyan2: hsl(177, 92%, 70%);
+
+	--dkText: hsl(198, 20%, 13%);
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+	justify-content: center;
+
+	background-repeat: no-repeat;
+
+	background: linear-gradient(
+		231deg,
+		rgba(22, 6, 40, 1) 0%,
+		rgba(52, 28, 79, 1) 50%,
+		rgba(88, 7, 125, 1) 100%
+	);
+}
+
+.container {
+	width: 90%;
+	max-width: 450px;
+}
+
+.heading {
+	color: var(--plWhite);
+	text-align: center;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	opacity: 0.75;
+	line-height: 1.2;
+}
+
+.displayContainer {
+	position: relative;
+	background-color: var(--dkViolet);
+	border-radius: 1rem;
+	border-bottom: 0.35rem solid var(--ltViolet);
+	margin: 1rem 0;
+	padding-top: 0.35rem;
+}
+
+.displayContainer button {
+	position: absolute;
+	top: 50%;
+	right: 1.5rem;
+	transform: translateY(-50%);
+}
+
+.passwordDisplay {
+	width: 100%;
+	padding: 1.15rem 1rem;
+	padding-right: 3.25rem;
+	font-size: 1.5rem;
+	line-height: 30px;
+	color: var(--vbYellow);
+	font-weight: 600;
+	letter-spacing: 1px;
+	background: transparent;
+	border: none;
+}
+
+.passwordDisplay::placeholder {
+	position: absolute;
+	top: 50%;
+	left: 1.5rem;
+	font-size: 1.5rem;
+	line-height: 30px;
+	color: var(--vbYellow);
+	font-weight: 600;
+	letter-spacing: 1px;
+	opacity: 0.6;
+	text-transform: uppercase;
+	transform: translateY(-50%);
+}
+
+.inputContainer {
+	width: 100%;
+	background-color: var(--dkViolet);
+	border-radius: 1rem;
+	padding: 2rem;
+	border-bottom: 0.35rem solid var(--ltViolet);
+}
+
+.lengthContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.lengthContainer p:nth-child(1) {
+	color: var(--plWhite);
+	font-size: 1.5rem;
+}
+
+.lengthContainer p:nth-child(2) {
+	color: var(--vbYellow);
+	font-size: 1.5rem;
+}
+
+.strengthContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	margin-top: 1.75rem;
+	margin-bottom: 2rem;
+}
+
+.strengthContainer p {
+	color: var(--plWhite);
+	font-size: 1.5rem;
+}
+
+.strengthIndicator {
+	height: 1.5rem;
+	width: 1.5rem;
+	border-radius: 50%;
+}
+
+.generateButton {
+	width: 100%;
+	padding: 1rem 0;
+	background-color: var(--vbViolet);
+	text-align: center;
+	border-radius: 0.75rem;
+	border-bottom: 0.35rem solid var(--vbYellow);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--vbYellow);
+	font-weight: 600;
+	font-size: 1.25rem;
+}
+
+/* Check List ki styling */
+
+.check {
+	display: flex;
+	align-items: center;
+	margin: 1rem 0;
+	gap: 0 1rem;
+}
+
+.check input {
+	appearance: none; /* remove default browser style */
+	width: 20px;
+	height: 20px;
+	border: 1px solid var(--vbCyan);
+	cursor: pointer;
+	position: relative;
+	border-radius: 0.35rem;
+}
+
+.check input:checked {
+	background-color: var(--vbCyan);
+}
+
+.check input:checked::before {
+	content: "✔️";
+	position: absolute;
+	color: var(--dkText);
+	font-size: 1.05rem;
+	font-weight: 600;
+	left: 50%;
+	top: -3.5px;
+	transform: translateX(-50%);
+}
+
+.check label {
+	color: var(--plWhite);
+	font-size: 1.25rem;
+	letter-spacing: 0.75px;
+}
+
+.lengthSlider {
+	appearance: none;
+	width: 100%;
+	cursor: pointer;
+	border-radius: 1rem;
+	margin-top: 2rem;
+	margin-bottom: 1.5rem;
+	height: 0.75rem;
+	background: linear-gradient(var(--vbViolet), var(--vbViolet));
+	background-repeat: no-repeat;
+}
+
+.lengthSlider::-webkit-slider-thumb {
+	position: relative;
+	appearance: none;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	background-color: var(--vbYellow);
+	cursor: pointer;
+	/* margin-top: -3px; */
+	transition: all 100ms ease-in;
+	box-shadow: 0 0 20px 0 rgba(255, 229, 61, 0.5);
+}
+.lengthSlider::-moz-range-thumb {
+	position: relative;
+	appearance: none;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	background-color: var(--vbYellow);
+	cursor: pointer;
+	/* margin-top: -3px; */
+	transition: all 100ms ease-in;
+	box-shadow: 0 0 20px 0 rgba(255, 229, 61, 0.5);
+}
+
+.lengthSlider:focus {
+	outline: 3px solid var(--vbYellow);
+}
+
+.lengthSlider::-webkit-slider-thumb:hover {
+	outline: 2px solid var(--vbYellow);
+	background-color: var(--dkViolet);
+	box-shadow: 0 0 25px 5px rgba(255, 229, 61, 0.8);
+}
+
+.lengthSlider::-moz-range-thumb:hover {
+	outline: 2px solid var(--vbYellow);
+	background-color: var(--dkViolet);
+	box-shadow: 0 0 25px 5px rgba(255, 229, 61, 0.8);
+}
+
+.CopyMessage {
+	background-color: var(--vbViolet2);
+	position: absolute;
+	color: var(--vbYellow);
+	font-size: 1.25rem;
+	top: -35px;
+	left: -25px;
+	padding: 5px 10px;
+	border-radius: 1rem;
+	opacity: 0;
+	transform: scale(0);
+	transform-origin: bottom;
+	transition: all 250ms ease-in-out;
+}
+
+.CopyMessage.active {
+	opacity: 1;
+	transform: scale(1);
+}
